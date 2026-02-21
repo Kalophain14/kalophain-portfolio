@@ -52,3 +52,6 @@ logs/
 # Large media files — track via Git LFS if needed
 # *.mp4
 # *.mov
+
+
+sections_commit.sh
