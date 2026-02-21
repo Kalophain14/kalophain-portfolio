@@ -1,0 +1,54 @@
+# ================================================================
+# .gitignore — Kalophain Portfolio
+# ================================================================
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor / IDE directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node (if you ever add a dev server)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+package-lock.json
+
+# Build output (if added later)
+/dist/
+/build/
+/.cache/
+
+# Environment & secrets — NEVER commit these
+.env
+.env.local
+.env.*.local
+
+# Netlify local dev
+.netlify/
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Large media files — track via Git LFS if needed
+# *.mp4
+# *.mov
