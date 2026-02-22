@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temoso — Software Engineer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas id="bg-canvas"></canvas>
+    <div id="cursor"></div>
+    <div id="cursor-dot"></div>
+
+    <!-- NAV -->
+    <nav id="main-nav">
+      <a href="#" class="nav-logo">Temoso</a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button
+          class="theme-toggle"
+          onclick="toggleTheme()"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button class="hamburger-icon" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#blog" onclick="toggleMenu()">Blog</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- HERO Getting Started -->
+    <section id="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title reveal">
+          <span class="hero-title-line">Temoso —</span>
+          <span class="hero-title-line italic">Software</span>
+          <span class="hero-title-line">Engineer</span>
+        </h1>
+        <div class="hero-bottom reveal">
+          <p class="hero-desc">
+            Building reliable: Back-end | Scalable systems.
+            <br />Growing every single day.
+          </p>
+          <div class="hero-actions">
+            <a href="#about" class="link-arrow">Learn more ↓</a>
+            <a
+              href="assets/resume-example.pdf"
+              target="_blank"
+              class="link-arrow"
+              >Download CV ↗</a
+            >
+          </div>
+        </div>
+        <div class="hero-img-container reveal">
+          <img src="assets/profile-pic.png" alt="Temoso" class="hero-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-label reveal">About</div>
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <img
+            src="assets/about-pic.png"
+            alt="Temoso about"
+            class="about-img"
+          />
+        </div>
+        <div class="about-text reveal">
+          <h2 class="section-heading">
+            A developer<br /><em>with purpose.</em>
+          </h2>
+          <p>
+            Hi, I'm Temoso, a Software Engineer based in Cape Town, South
+            Africa. With 1+ year of hands-on experience in back-end engineering,
+            I'm on a journey to grow into a well-rounded engineer who builds
+            software that genuinely makes a difference.
+          </p>
+          <p>
+            I'm passionate about clean architecture, writing maintainable code,
+            and constantly pushing myself to learn whether that's diving deeper
+            into Java and Spring Boot, exploring cloud infrastructure on AWS, or
+            picking up new tools along the way.
+          </p>
+          <p>
+            I believe great software is built by curious, humble people who
+            never stop growing and that's exactly the kind of engineer I'm
+            working every day to become.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">1 +</span>
+              <span class="stat-label">Years experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">CPT</span>
+              <span class="stat-label">South Africa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="experience">
+      <div class="section-label reveal">Skills</div>
+      <h2 class="section-heading reveal">What I<br /><em>work with.</em></h2>
+      <div class="skills-grid reveal">
+        <div class="skill-group">
+          <h3 class="skill-group-title">Frontend</h3>
+          <ul class="skill-list">
+            <li>
+              <span class="skill-name">Html</span
+              ><span class="skill-level">Basic</span>
+            </li>
+            <li>
+              <span class="skill-name">Css</span
+              ><span class="skill-level">Basic</span>
+            </li>
+            <li>
+              <span class="skill-name">JavaScript</span
+              ><span class="skill-level">Basic</span>
+            </li>
+            <li>
+              <span class="skill-name">Material UI</span
+              ><span class="skill-level">Intermediate</span>
+            </li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">Backend</h3>
+          <ul class="skill-list">
+            <li>
+              <span class="skill-name">Java</span
+              ><span class="skill-level">Basic</span>
+            </li>
+            <li>
+              <span class="skill-name">Spring Boot</span
+              ><span class="skill-level">Basic</span>
+            </li>
+            <li>
+              <span class="skill-name">SQL</span
+              ><span class="skill-level">Basic</span>
+            </li>
+            <li>
+              <span class="skill-name">Aws</span
+              ><span class="skill-level">Basic</span>
+            </li>
+            <li>
+              <span class="skill-name">Git</span
+              ><span class="skill-level">Intermediate</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-label reveal">Projects</div>
+      <h2 class="section-heading reveal">Recent<br /><em>work.</em></h2>
+      <div class="projects-list">
+        <a
+          href="https://github.com/Kalophain14"
+          target="_blank"
+          class="project-row reveal"
+        >
+          <div class="project-row-left">
+            <span class="project-num">01</span>
+            <span class="project-name">Memory Cards</span>
+          </div>
+          <div class="project-row-right">
+            <img
+              src="assets/project-1.png"
+              alt="Project 1"
+              class="project-thumb"
+            />
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+        <a
+          href="https://github.com/Kalophain14"
+          target="_blank"
+          class="project-row reveal"
+        >
+          <div class="project-row-left">
+            <span class="project-num">02</span>
+            <span class="project-name">Pac-Man</span>
+          </div>
+          <div class="project-row-right">
+            <img
+              src="assets/project-2.png"
+              alt="Project 2"
+              class="project-thumb"
+            />
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+        <a
+          href="https://github.com/Kalophain14"
+          target="_blank"
+          class="project-row reveal"
+        >
+          <div class="project-row-left">
+            <span class="project-num">03</span>
+            <span class="project-name">Project Three</span>
+          </div>
+          <div class="project-row-right">
+            <img
+              src="assets/project-3.png"
+              alt="Project 3"
+              class="project-thumb"
+            />
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+      <div class="section-label reveal">Blog</div>
+      <h2 class="section-heading reveal">The<br /><em>journey.</em></h2>
+      <p class="blog-sub reveal">
+        Thoughts and stories from life as a software engineer in Cape Town.
+      </p>
+      <div class="blog-list">
+        <div class="blog-row reveal" onclick="openPost(0)">
+          <div class="blog-row-left">
+            <span class="blog-tag-inline">Getting Started</span>
+            <h3 class="blog-row-title">Why I Started This Blog</h3>
+          </div>
+          <div class="blog-row-right">
+            <span class="blog-date-inline">Feb 2026</span>
+            <span class="blog-arrow">→</span>
+          </div>
+        </div>
+        <div class="blog-row reveal" onclick="openPost(1)">
+          <div class="blog-row-left">
+            <span class="blog-tag-inline">Learning</span>
+            <h3 class="blog-row-title">Backing The-Engineer</h3>
+          </div>
+          <div class="blog-row-right">
+            <span class="blog-date-inline">Feb 2026</span>
+            <span class="blog-arrow">→</span>
+          </div>
+        </div>
+        <div class="blog-row reveal" onclick="openPost(2)">
+          <div class="blog-row-left">
+            <span class="blog-tag-inline">Life</span>
+            <h3 class="blog-row-title">Engineering from Cape Town</h3>
+          </div>
+          <div class="blog-row-right">
+            <span class="blog-date-inline">Coming Soon</span>
+            <span class="blog-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Modal -->
+      <div
+        id="blog-modal"
+        class="blog-modal-overlay"
+        onclick="closePost(event)"
+      >
+        <div class="blog-modal-content">
+          <button class="blog-modal-close" onclick="closeModal()">✕</button>
+          <span class="blog-modal-tag" id="modal-tag"></span>
+          <p class="blog-modal-date" id="modal-date"></p>
+          <h2 class="blog-modal-title" id="modal-title"></h2>
+          <div class="blog-modal-body" id="modal-body"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-label reveal">Contact</div>
+      <h2 class="section-heading reveal">Let's<br /><em>connect.</em></h2>
+      <div class="contact-links reveal">
+        <a href="mailto:Chueutemosho@gmail.com" class="contact-link">
+          <span>Email</span><span>↗</span>
+        </a>
+        <a
+          href="https://github.com/Kalophain14"
+          target="_blank"
+          class="contact-link"
+        >
+          <span>GitHub</span><span>↗</span>
+        </a>
+        <a
+          href="https://www.instagram.com/kalophain14"
+          target="_blank"
+          class="contact-link"
+        >
+          <span>Instagram</span><span>↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>© 2026 Temoso</span>
+      <span>Cape Town, South Africa</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
