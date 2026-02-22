@@ -1,6 +1,6 @@
 # Temoso — Portfolio Website
 
-A personal portfolio website for Temoso, a Software Engineer based in Cape Town, South Africa. Built with vanilla HTML, CSS, and JavaScript — no frameworks, no dependencies.
+A personal portfolio website Built with vanilla HTML, CSS, and JavaScript — no frameworks, no dependencies.
 
 ---
 
