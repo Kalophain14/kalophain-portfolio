@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Temoso — Software Engineer</title>
     <link rel="stylesheet" href="style.css" />
@@ -18,7 +17,6 @@
     <div id="cursor"></div>
     <div id="cursor-dot"></div>
 
-    <!-- NAV -->
     <nav id="main-nav">
       <a href="#" class="nav-logo">Temoso</a>
       <div class="nav-right">
@@ -29,31 +27,26 @@
           <li><a href="#blog">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button
-          class="theme-toggle"
-          onclick="toggleTheme()"
-          aria-label="Toggle theme"
-        >
-          <span class="theme-icon">🌙</span>
+        <button class="theme-toggle" id="theme-btn" aria-label="Toggle theme">
+          <div class="toggle-knob"></div>
         </button>
-        <button class="hamburger-icon" onclick="toggleMenu()" aria-label="Menu">
+        <button class="hamburger-icon" id="menu-btn" aria-label="Menu">
           <span></span><span></span>
         </button>
       </div>
     </nav>
 
-    <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobile-menu">
+      <button class="mobile-close" id="mobile-close">✕</button>
       <ul>
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#blog" onclick="toggleMenu()">Blog</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
 
-    <!-- HERO Getting Started -->
     <section id="hero">
       <div class="hero-inner">
         <h1 class="hero-title reveal">
@@ -63,8 +56,7 @@
         </h1>
         <div class="hero-bottom reveal">
           <p class="hero-desc">
-            Building reliable: Back-end | Scalable systems.
-            <br />Growing every single day.
+            Building reliable back-end systems.<br />Growing every single day.
           </p>
           <div class="hero-actions">
             <a href="#about" class="link-arrow">Learn more ↓</a>
@@ -82,53 +74,89 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about">
       <div class="section-label reveal">About</div>
       <div class="about-grid">
         <div class="about-img-wrap reveal">
-          <img
-            src="assets/about-pic.png"
-            alt="Temoso about"
-            class="about-img"
-          />
+          <img src="assets/about-pic.png" alt="Temoso" class="about-img" />
         </div>
         <div class="about-text reveal">
-          <h2 class="section-heading">
-            A developer<br /><em>with purpose.</em>
-          </h2>
-          <p>
-            Hi, I'm Temoso, a Software Engineer based in Cape Town, South
-            Africa. With 1+ year of hands-on experience in back-end engineering,
-            I'm on a journey to grow into a well-rounded engineer who builds
-            software that genuinely makes a difference.
+          <p class="about-greeting">
+            <span id="greeting-text">Hi</span>, I'm Temoso.
           </p>
-          <p>
-            I'm passionate about clean architecture, writing maintainable code,
-            and constantly pushing myself to learn whether that's diving deeper
-            into Java and Spring Boot, exploring cloud infrastructure on AWS, or
-            picking up new tools along the way.
-          </p>
-          <p>
-            I believe great software is built by curious, humble people who
-            never stop growing and that's exactly the kind of engineer I'm
-            working every day to become.
-          </p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-num">1 +</span>
-              <span class="stat-label">Years experience</span>
+
+          <!-- DARK MODE: Software Engineer -->
+          <div class="about-content about-dark">
+            <h2 class="section-heading">
+              A developer<br /><em>with purpose.</em>
+            </h2>
+            <p>
+              I'm a Software Engineer based in Cape Town, South Africa. With 1+
+              year of hands-on experience in back-end engineering, I'm on a
+              journey to grow into a well-rounded engineer who builds software
+              that genuinely makes a difference.
+            </p>
+            <p>
+              I'm passionate about clean architecture, writing maintainable
+              code, and constantly pushing myself to learn — whether that's
+              diving deeper into Java and Spring Boot, exploring cloud
+              infrastructure on AWS, or picking up new tools along the way.
+            </p>
+            <p>
+              I believe great software is built by curious, humble people who
+              never stop growing — and that's exactly the kind of engineer I'm
+              working every day to become.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-num">1 +</span>
+                <span class="stat-label">Years experience</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">CPT</span>
+                <span class="stat-label">South Africa</span>
+              </div>
             </div>
-            <div class="stat">
-              <span class="stat-num">CPT</span>
-              <span class="stat-label">South Africa</span>
+          </div>
+
+          <!-- LIGHT MODE: Creative / Artist -->
+          <div class="about-content about-light">
+            <h2 class="section-heading">
+              A storyteller<br /><em>at heart.</em>
+            </h2>
+            <p>
+              I am a visual storyteller and music creator inspired by the quiet
+              wisdom of nature and the beautiful chaos of the human experience.
+              Through photography, I capture fleeting moments that often go
+              unnoticed — light, texture, emotion — preserving them as timeless
+              reflections of life.
+            </p>
+            <p>
+              Through music, I translate feeling into sound, crafting immersive
+              atmospheres for those who are unafraid to explore the depths of
+              imagination and reality.
+            </p>
+            <p>
+              I believe in slowing down, listening closely, and allowing nature
+              to guide both my creative process and my personal growth. My work
+              is an invitation to pause, to feel deeply, and to embrace the
+              wild, unpredictable rhythm of the world around us.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-num">CPT</span>
+                <span class="stat-label">South Africa</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">∞</span>
+                <span class="stat-label">Stories to tell</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
     <section id="experience">
       <div class="section-label reveal">Skills</div>
       <h2 class="section-heading reveal">What I<br /><em>work with.</em></h2>
@@ -137,11 +165,11 @@
           <h3 class="skill-group-title">Frontend</h3>
           <ul class="skill-list">
             <li>
-              <span class="skill-name">Html</span
+              <span class="skill-name">HTML</span
               ><span class="skill-level">Basic</span>
             </li>
             <li>
-              <span class="skill-name">Css</span
+              <span class="skill-name">CSS</span
               ><span class="skill-level">Basic</span>
             </li>
             <li>
@@ -170,7 +198,7 @@
               ><span class="skill-level">Basic</span>
             </li>
             <li>
-              <span class="skill-name">Aws</span
+              <span class="skill-name">AWS</span
               ><span class="skill-level">Basic</span>
             </li>
             <li>
@@ -182,24 +210,30 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects">
       <div class="section-label reveal">Projects</div>
       <h2 class="section-heading reveal">Recent<br /><em>work.</em></h2>
       <div class="projects-list">
         <a
-          href="https://github.com/Kalophain14"
+          href="https://github.com/Kalophain14/kalophain-portfolio"
           target="_blank"
           class="project-row reveal"
         >
           <div class="project-row-left">
             <span class="project-num">01</span>
-            <span class="project-name">Memory Cards</span>
+            <div class="project-info">
+              <span class="project-name">Portfolio Website</span>
+              <span class="project-desc"
+                >This very site — designed and built from scratch with custom
+                animations and dark mode.</span
+              >
+              <span class="project-stack">HTML · CSS · JavaScript</span>
+            </div>
           </div>
           <div class="project-row-right">
             <img
               src="assets/project-1.png"
-              alt="Project 1"
+              alt="Portfolio"
               class="project-thumb"
             />
             <span class="project-arrow">↗</span>
@@ -212,12 +246,19 @@
         >
           <div class="project-row-left">
             <span class="project-num">02</span>
-            <span class="project-name">Pac-Man</span>
+            <div class="project-info">
+              <span class="project-name">Memory Cards</span>
+              <span class="project-desc"
+                >An interactive flashcard app to boost memory and
+                learning.</span
+              >
+              <span class="project-stack">JavaScript · HTML · CSS</span>
+            </div>
           </div>
           <div class="project-row-right">
             <img
-              src="assets/project-2.png"
-              alt="Project 2"
+              src="assets/project-1.png"
+              alt="Memory Cards"
               class="project-thumb"
             />
             <span class="project-arrow">↗</span>
@@ -230,12 +271,71 @@
         >
           <div class="project-row-left">
             <span class="project-num">03</span>
-            <span class="project-name">Project Three</span>
+            <div class="project-info">
+              <span class="project-name">Pac-Man</span>
+              <span class="project-desc"
+                >A browser-based Pac-Man clone with classic arcade
+                gameplay.</span
+              >
+              <span class="project-stack">Java · Canvas API · CSS</span>
+            </div>
+          </div>
+          <div class="project-row-right">
+            <img
+              src="assets/project-2.png"
+              alt="Pac-Man"
+              class="project-thumb"
+            />
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+        <a
+          href="https://github.com/Kalophain14"
+          target="_blank"
+          class="project-row reveal"
+        >
+          <div class="project-row-left">
+            <span class="project-num">04</span>
+            <div class="project-info">
+              <span class="project-name">Spring REST API</span>
+              <span class="project-desc"
+                >A RESTful API built with Spring Boot for managing user data and
+                resources.</span
+              >
+              <span class="project-stack">Java · Spring Boot · SQL</span>
+            </div>
           </div>
           <div class="project-row-right">
             <img
               src="assets/project-3.png"
-              alt="Project 3"
+              alt="Spring REST API"
+              class="project-thumb"
+            />
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+        <a
+          href="https://github.com/Kalophain14"
+          target="_blank"
+          class="project-row reveal"
+        >
+          <div class="project-row-left">
+            <span class="project-num">05</span>
+            <div class="project-info">
+              <span class="project-name">Task Tracker</span>
+              <span class="project-desc"
+                >A productivity tool for managing daily tasks with priority and
+                deadline tracking.</span
+              >
+              <span class="project-stack"
+                >Java · Spring Boot · Material UI</span
+              >
+            </div>
+          </div>
+          <div class="project-row-right">
+            <img
+              src="assets/project-3.png"
+              alt="Task Tracker"
               class="project-thumb"
             />
             <span class="project-arrow">↗</span>
@@ -244,7 +344,6 @@
       </div>
     </section>
 
-    <!-- BLOG -->
     <section id="blog">
       <div class="section-label reveal">Blog</div>
       <h2 class="section-heading reveal">The<br /><em>journey.</em></h2>
@@ -252,7 +351,7 @@
         Thoughts and stories from life as a software engineer in Cape Town.
       </p>
       <div class="blog-list">
-        <div class="blog-row reveal" onclick="openPost(0)">
+        <div class="blog-row reveal" id="blog-0">
           <div class="blog-row-left">
             <span class="blog-tag-inline">Getting Started</span>
             <h3 class="blog-row-title">Why I Started This Blog</h3>
@@ -262,7 +361,7 @@
             <span class="blog-arrow">→</span>
           </div>
         </div>
-        <div class="blog-row reveal" onclick="openPost(1)">
+        <div class="blog-row reveal" id="blog-1">
           <div class="blog-row-left">
             <span class="blog-tag-inline">Learning</span>
             <h3 class="blog-row-title">Backing The-Engineer</h3>
@@ -272,7 +371,7 @@
             <span class="blog-arrow">→</span>
           </div>
         </div>
-        <div class="blog-row reveal" onclick="openPost(2)">
+        <div class="blog-row reveal" id="blog-2">
           <div class="blog-row-left">
             <span class="blog-tag-inline">Life</span>
             <h3 class="blog-row-title">Engineering from Cape Town</h3>
@@ -282,16 +381,41 @@
             <span class="blog-arrow">→</span>
           </div>
         </div>
+        <div class="blog-row reveal" id="blog-3">
+          <div class="blog-row-left">
+            <span class="blog-tag-inline">Cloud</span>
+            <h3 class="blog-row-title">My Visit to AWS</h3>
+          </div>
+          <div class="blog-row-right">
+            <span class="blog-date-inline">Feb 2026</span>
+            <span class="blog-arrow">→</span>
+          </div>
+        </div>
+        <div class="blog-row reveal" id="blog-4">
+          <div class="blog-row-left">
+            <span class="blog-tag-inline">Events</span>
+            <h3 class="blog-row-title">Hackathon Experience</h3>
+          </div>
+          <div class="blog-row-right">
+            <span class="blog-date-inline">Jan 2026</span>
+            <span class="blog-arrow">→</span>
+          </div>
+        </div>
+        <div class="blog-row reveal" id="blog-5">
+          <div class="blog-row-left">
+            <span class="blog-tag-inline">Growth</span>
+            <h3 class="blog-row-title">Lessons from Building Side Projects</h3>
+          </div>
+          <div class="blog-row-right">
+            <span class="blog-date-inline">Jan 2026</span>
+            <span class="blog-arrow">→</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Blog Modal -->
-      <div
-        id="blog-modal"
-        class="blog-modal-overlay"
-        onclick="closePost(event)"
-      >
+      <div id="blog-modal" class="blog-modal-overlay">
         <div class="blog-modal-content">
-          <button class="blog-modal-close" onclick="closeModal()">✕</button>
+          <button class="blog-modal-close" id="modal-close-btn">✕</button>
           <span class="blog-modal-tag" id="modal-tag"></span>
           <p class="blog-modal-date" id="modal-date"></p>
           <h2 class="blog-modal-title" id="modal-title"></h2>
@@ -300,32 +424,100 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <div class="section-label reveal">Contact</div>
       <h2 class="section-heading reveal">Let's<br /><em>connect.</em></h2>
       <div class="contact-links reveal">
-        <a href="mailto:Chueutemosho@gmail.com" class="contact-link">
-          <span>Email</span><span>↗</span>
-        </a>
+        <p class="contact-group-label">Follow me</p>
         <a
           href="https://github.com/Kalophain14"
           target="_blank"
           class="contact-link"
         >
-          <span>GitHub</span><span>↗</span>
+          <span class="contact-link-inner">
+            <svg
+              class="contact-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.185 6.839 9.511.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.203 22 16.447 22 12.021 22 6.484 17.523 2 12 2z"
+              />
+            </svg>
+            GitHub
+          </span>
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a
+          href="https://x.com/kalophain?s=21"
+          target="_blank"
+          class="contact-link"
+        >
+          <span class="contact-link-inner">
+            <svg
+              class="contact-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+            X / Twitter
+          </span>
+          <span class="contact-arrow">↗</span>
         </a>
         <a
           href="https://www.instagram.com/kalophain14"
           target="_blank"
           class="contact-link"
         >
-          <span>Instagram</span><span>↗</span>
+          <span class="contact-link-inner">
+            <svg
+              class="contact-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.333-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.333-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 5.775.131 4.602.425 3.635 1.392 2.668 2.359 2.374 3.532 2.315 4.81 2.257 6.09 2.243 6.498 2.243 12c0 5.502.014 5.91.072 7.19.059 1.278.353 2.451 1.32 3.418.967.967 2.14 1.261 3.418 1.32C8.333 23.986 8.741 24 12 24c3.259 0 3.667-.014 4.947-.072 1.278-.059 2.451-.353 3.418-1.32.967-.967 1.261-2.14 1.32-3.418.058-1.28.072-1.688.072-7.19 0-5.502-.014-5.91-.072-7.19-.059-1.278-.353-2.451-1.32-3.418C19.398.425 18.225.131 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              />
+            </svg>
+            Instagram
+          </span>
+          <span class="contact-arrow">↗</span>
         </a>
+        <a
+          href="https://music.apple.com/profile/kalophain"
+          target="_blank"
+          class="contact-link"
+        >
+          <span class="contact-link-inner">
+            <svg
+              class="contact-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208c-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.154 1.624.497 2.373.65 1.42 1.738 2.353 3.234 2.802.42.127.856.187 1.293.228.555.052 1.11.06 1.667.06h11.03c.525 0 1.048-.034 1.57-.1.823-.106 1.597-.35 2.296-.81 1.268-.833 2.02-1.993 2.22-3.495.07-.507.103-1.017.103-1.53.004-4.499.006-8.997-.004-13.496zm-6.423 3.99v5.712c0 .417-.058.827-.244 1.206-.29.59-.76.962-1.388 1.14-.35.1-.706.157-1.07.173-.95.045-1.773-.6-1.943-1.536a1.88 1.88 0 011.038-2.022c.323-.16.67-.25 1.018-.322.354-.072.71-.136 1.061-.213.51-.111.77-.37.77-.887.002-1.56 0-3.12.001-4.68 0-.06-.013-.12-.026-.18l-5.567 1.35v6.433c0 .392-.045.778-.2 1.148-.324.77-.908 1.25-1.71 1.43-.315.07-.635.105-.957.112-.95.028-1.764-.605-1.93-1.54a1.877 1.877 0 011.039-2.02c.338-.165.7-.254 1.062-.327.35-.07.702-.132 1.05-.207.502-.106.758-.363.758-.873V6.816c0-.405.105-.786.38-1.1a1.854 1.854 0 011.056-.62l5.733-1.39c.11-.027.224-.042.337-.042.47 0 .74.274.74.74.004 1.836.002 3.672.002 5.509z"
+              />
+            </svg>
+            Apple Music
+          </span>
+          <span class="contact-arrow">↗</span>
+        </a>
+      </div>
+      <div class="contact-cta-bar reveal">
+        <a href="contact.html" class="contact-cta-btn">Open contact form ↗</a>
+        <span class="contact-cta-note"
+          >Prefer a quick message? Fill in the form.</span
+        >
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
       <span>© 2026 Temoso</span>
       <span>South Africa</span>
