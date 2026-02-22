@@ -246,7 +246,7 @@ const blogPosts = [
   },
   {
     tag: "Learning",
-    date: "21 February 2026",
+    date: "February 2026",
     title: "Backing The-Engineer",
     body: `
       <p>A year goes by faster than you think.</p>
