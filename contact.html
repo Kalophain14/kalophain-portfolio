@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Temoso</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ── CONTACT PAGE SPECIFIC ─────────────────────────────────────────────── */
+      #contact-page {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Left panel */
+      .cp-left {
+        padding: 8rem 4rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-right: 1px solid var(--border);
+        background: var(--bg-2);
+      }
+      .cp-left-top {}
+      .cp-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 4rem;
+        transition: color 0.2s;
+        cursor: none;
+      }
+      .cp-back:hover { color: var(--text); }
+      .cp-heading {
+        font-family: var(--font-serif);
+        font-size: clamp(2.8rem, 5vw, 4.5rem);
+        font-weight: 400;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        margin-bottom: 1.5rem;
+      }
+      .cp-heading em {
+        font-style: italic;
+        color: var(--text-muted);
+      }
+      .cp-subtext {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+        font-weight: 300;
+        max-width: 340px;
+        margin-bottom: 3rem;
+      }
+      .cp-info-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+      .cp-info-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+      .cp-info-label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+        opacity: 0.6;
+      }
+      .cp-info-value {
+        font-size: 0.98rem;
+        color: var(--text);
+        font-weight: 400;
+      }
+      .cp-info-value a {
+        color: var(--text);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.1rem;
+        transition: border-color 0.2s;
+      }
+      .cp-info-value a:hover { border-color: var(--text); }
+      .cp-left-bottom {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        opacity: 0.5;
+      }
+
+      /* Right panel — form */
+      .cp-right {
+        padding: 8rem 4rem 4rem;
+        overflow-y: auto;
+      }
+      .cp-form-label-top {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
+        opacity: 0.7;
+      }
+      .cp-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .cp-field-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+      .cp-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .cp-field label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: var(--text);
+      }
+      .cp-field label .req {
+        color: var(--text-muted);
+        font-weight: 300;
+      }
+      .cp-field input,
+      .cp-field textarea,
+      .cp-field select {
+        background: transparent;
+        border: 1px solid var(--border);
+        border-radius: 0.5rem;
+        padding: 0.85rem 1rem;
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
+        color: var(--text);
+        font-weight: 300;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        width: 100%;
+        appearance: none;
+        -webkit-appearance: none;
+      }
+      .cp-field input::placeholder,
+      .cp-field textarea::placeholder {
+        color: var(--text-muted);
+        opacity: 0.5;
+      }
+      .cp-field input:focus,
+      .cp-field textarea:focus,
+      .cp-field select:focus {
+        border-color: var(--text);
+        box-shadow: 0 0 0 3px rgba(42,41,38,0.06);
+      }
+      body.dark-mode .cp-field input:focus,
+      body.dark-mode .cp-field textarea:focus,
+      body.dark-mode .cp-field select:focus {
+        box-shadow: 0 0 0 3px rgba(232,230,225,0.06);
+      }
+      .cp-field textarea {
+        resize: vertical;
+        min-height: 130px;
+        line-height: 1.7;
+      }
+      .cp-field select {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a7770' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        padding-right: 2.5rem;
+        cursor: none;
+      }
+      .cp-field .cp-hint {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        font-weight: 300;
+        opacity: 0.7;
+      }
+      .cp-divider {
+        height: 1px;
+        background: var(--border);
+        margin: 0.5rem 0;
+      }
+      .cp-submit-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding-top: 0.5rem;
+      }
+      .cp-submit-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--text);
+        color: var(--bg);
+        font-family: var(--font-sans);
+        font-size: 0.92rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        padding: 0.9rem 2rem;
+        border-radius: 999px;
+        border: none;
+        cursor: none;
+        transition: opacity 0.2s, transform 0.2s;
+      }
+      .cp-submit-btn:hover {
+        opacity: 0.8;
+        transform: translateY(-1px);
+      }
+      .cp-submit-note {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        font-weight: 300;
+        opacity: 0.6;
+      }
+
+      /* Success state */
+      #cp-success {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 3rem;
+        background: var(--bg-2);
+        border-radius: 1rem;
+        border: 1px solid var(--border);
+      }
+      #cp-success.visible { display: flex; }
+      .cp-success-icon {
+        font-size: 2rem;
+      }
+      .cp-success-title {
+        font-family: var(--font-serif);
+        font-size: 1.8rem;
+        color: var(--text);
+      }
+      .cp-success-text {
+        font-size: 0.98rem;
+        color: var(--text-muted);
+        font-weight: 300;
+        line-height: 1.7;
+      }
+
+      /* Nav override for contact page */
+      #contact-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.4rem 4rem;
+        transition: background 0.3s;
+      }
+      #contact-nav.scrolled {
+        background: rgba(245,244,240,0.88);
+        backdrop-filter: blur(14px);
+      }
+      body.dark-mode #contact-nav.scrolled {
+        background: rgba(17,17,16,0.88);
+      }
+
+      @media (max-width: 800px) {
+        #contact-page {
+          grid-template-columns: 1fr;
+        }
+        .cp-left {
+          padding: 7rem 2rem 3rem;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+        }
+        .cp-right {
+          padding: 3rem 2rem 4rem;
+        }
+        .cp-field-row {
+          grid-template-columns: 1fr;
+        }
+        #contact-nav {
+          padding: 1.2rem 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="bg-canvas"></canvas>
+    <div id="cursor"></div>
+    <div id="cursor-dot"></div>
+
+    <nav id="contact-nav" id="main-nav">
+      <a href="index.html" class="nav-logo">Temoso</a>
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-btn" aria-label="Toggle theme">
+          <div class="toggle-knob"></div>
+        </button>
+      </div>
+    </nav>
+
+    <div id="contact-page">
+      <!-- LEFT PANEL -->
+      <div class="cp-left">
+        <div class="cp-left-top">
+          <a href="index.html" class="cp-back">← Back to portfolio</a>
+          <h1 class="cp-heading">Let's build<br /><em>something great.</em></h1>
+          <p class="cp-subtext">
+            Have a project in mind, a question, or just want to say hello? 
+            Fill in the form and I'll get back to you as soon as I can.
+          </p>
+          <div class="cp-info-list">
+
+            <div class="cp-info-item">
+              <span class="cp-info-label">GitHub</span>
+              <span class="cp-info-value">
+                <a href="https://github.com/Kalophain14" target="_blank">github.com/Kalophain14</a>
+              </span>
+            </div>
+            <div class="cp-info-item">
+              <span class="cp-info-label">Based in</span>
+              <span class="cp-info-value">Cape Town, South Africa</span>
+            </div>
+            <div class="cp-info-item">
+              <span class="cp-info-label">Response time</span>
+              <span class="cp-info-value">Within 24–48 hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="cp-left-bottom">© 2026 Temoso</div>
+      </div>
+
+      <!-- RIGHT PANEL — FORM -->
+      <div class="cp-right">
+        <p class="cp-form-label-top">Send a message</p>
+
+        <div id="cp-success">
+          <span class="cp-success-icon">✓</span>
+          <h3 class="cp-success-title">Message sent!</h3>
+          <p class="cp-success-text">Thanks for reaching out. I'll get back to you within 24–48 hours.</p>
+        </div>
+
+        <form class="cp-form" id="cp-form" novalidate>
+          <div class="cp-field-row">
+            <div class="cp-field">
+              <label for="cp-name">Full name <span class="req">*</span></label>
+              <input type="text" id="cp-name" placeholder="First and last name" required />
+            </div>
+            <div class="cp-field">
+              <label for="cp-email">Email <span class="req">*</span></label>
+              <input type="email" id="cp-email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="cp-field">
+            <label for="cp-subject">Subject <span class="req">*</span></label>
+            <select id="cp-subject" required>
+              <option value="" disabled selected>What is this about?</option>
+              <option>Job opportunity</option>
+              <option>Freelance project</option>
+              <option>Collaboration</option>
+              <option>Just saying hello</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="cp-field-row">
+            <div class="cp-field">
+              <label for="cp-budget">Budget range</label>
+              <select id="cp-budget">
+                <option value="" disabled selected>Estimated budget</option>
+                <option>Under R5,000</option>
+                <option>R5,000 – R20,000</option>
+                <option>R20,000 – R50,000</option>
+                <option>R50,000+</option>
+                <option>Not applicable</option>
+              </select>
+            </div>
+            <div class="cp-field">
+              <label for="cp-timeline">Timeline</label>
+              <select id="cp-timeline">
+                <option value="" disabled selected>Project timeline</option>
+                <option>ASAP</option>
+                <option>1 – 4 weeks</option>
+                <option>1 – 3 months</option>
+                <option>3+ months</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cp-field">
+            <label for="cp-message">Message <span class="req">*</span></label>
+            <textarea id="cp-message" placeholder="Tell me about your project, idea, or question..." required></textarea>
+            <span class="cp-hint">Include as much detail as you'd like — the more context, the better.</span>
+          </div>
+
+          <div class="cp-divider"></div>
+
+          <div class="cp-submit-row">
+            <button type="submit" class="cp-submit-btn">Send message ↗</button>
+            <span class="cp-submit-note">I read every message personally.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+    <script>
+      // Contact page form handler
+      document.addEventListener("DOMContentLoaded", function() {
+        var form = document.getElementById("cp-form");
+        var success = document.getElementById("cp-success");
+
+        if (form) {
+          form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            var name = document.getElementById("cp-name").value.trim();
+            var email = document.getElementById("cp-email").value.trim();
+            var subject = document.getElementById("cp-subject").value;
+            var message = document.getElementById("cp-message").value.trim();
+
+            if (!name || !email || !subject || !message) {
+              // Simple highlight of empty required fields
+              [["cp-name", name], ["cp-email", email], ["cp-subject", subject], ["cp-message", message]].forEach(function(pair) {
+                var el = document.getElementById(pair[0]);
+                if (!pair[1]) {
+                  el.style.borderColor = "rgba(200,60,60,0.6)";
+                  el.addEventListener("input", function() { el.style.borderColor = ""; }, { once: true });
+                }
+              });
+              return;
+            }
+
+            // Simulate send (mailto fallback)
+            var mailtoLink = "mailto:Chueutemosho@gmail.com"
+              + "?subject=" + encodeURIComponent(subject + " — " + name)
+              + "&body=" + encodeURIComponent(message + "\n\nFrom: " + name + " <" + email + ">");
+            window.location.href = mailtoLink;
+
+            // Show success state
+            form.style.display = "none";
+            success.classList.add("visible");
+          });
+        }
+
+        // Nav
