@@ -341,7 +341,7 @@ const blogPosts = [
   },
   {
     tag: "Cloud",
-    date: "February 2026",
+    date: "Coming Soon",
     title: "My Visit to AWS",
     body: `
       <p>Walking into an AWS office for the first time felt surreal.</p>
@@ -357,7 +357,7 @@ const blogPosts = [
   },
   {
     tag: "Events",
-    date: "January 2026",
+    date: "Coming Soon",
     title: "Hackathon Experience",
     body: `
       <p>48 hours. One idea. A team of strangers. No sleep.</p>
@@ -373,7 +373,7 @@ const blogPosts = [
   },
   {
     tag: "Growth",
-    date: "January 2026",
+    date: "Coming Soon",
     title: "Lessons from Building Side Projects",
     body: `
       <p>Side projects are where I do my best learning — and make my worst mistakes.</p>
