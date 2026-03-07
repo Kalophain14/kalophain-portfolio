@@ -10,6 +10,12 @@ A personal portfolio website Built with vanilla HTML, CSS, and JavaScript — no
 
 ---
 
+## Preview
+
+![Portfolio Preview](./assets/project-1.png)
+
+---
+
 ## Features
 
 - **Editorial-minimal design** inspired by [nils.io](https://nils.io)
