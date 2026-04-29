@@ -168,7 +168,6 @@ body.dark-mode {
 
 ## Contact
 
-- **Email** — [Chueutemosho@gmail.com](mailto:Chueutemosho@gmail.com)
 - **GitHub** — [@Kalophain14](https://github.com/Kalophain14)
 - **Instagram** — [@kalophain14](https://www.instagram.com/kalophain14)
 
